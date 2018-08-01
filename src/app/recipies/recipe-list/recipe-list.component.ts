@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { Recipe } from '../recipe.model';
 
 @Component({
@@ -9,7 +9,7 @@ import { Recipe } from '../recipe.model';
 
 export class RecipeListComponent implements OnInit {
 
-	recipies: Recipe[] = [
+	@Output() recipies: Recipe[] = [
 		new Recipe('Mac-n-Cheese', 'Everyones favorite meal', 'http://assets.kraftfoods.com/recipe_images/opendeploy/52089_640x428.jpg'),
 		new Recipe('Mac-n-Cheese', 'Everyones favorite meal', 'http://assets.kraftfoods.com/recipe_images/opendeploy/52089_640x428.jpg')
 	];
