@@ -17,7 +17,6 @@ export class ShoppingListService implements OnInit{
 	constructor() { }
 
 	ngOnInit () {
-
 	}
 	
 	getIngredients() {
@@ -28,6 +27,11 @@ export class ShoppingListService implements OnInit{
 		//console.log(ingredient)
 		this.ingredients.push(ingredient)
 		//console.log(this.ingredients)
+		this.ingredientsChanged.emit(this.ingredients.slice())
+	}
+
+	addIngredientsFromSelectedRecipe(ingredients: Ingredient[]){
+		this.ingredients.push(...ingredients);
 		this.ingredientsChanged.emit(this.ingredients.slice())
 	}
 

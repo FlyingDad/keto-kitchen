@@ -1,12 +1,12 @@
-// import { Injectable } from '@angular/core';
-
-// @Injectable({
-//   providedIn: 'root'
-// })
-
+import { Injectable } from '@angular/core';
 import { Recipe } from "./recipe.model";
 import { EventEmitter } from '@angular/core';
 import { Ingredient } from "../shared/ingredient.model";
+import { ShoppingListService } from '../shopping-list/shopping-list.service';
+
+@Injectable({
+  providedIn: 'root'
+})
 
 export class RecipeService {
 
@@ -35,10 +35,14 @@ export class RecipeService {
     )
   ];
 
-	constructor() {}
+	constructor(private shoppingListService: ShoppingListService) {}
 	
 	getRecipes() {
 		// return copy of array so we are not returning reference to recipes, keeps recipes private
 		return this.recipes.slice()
+	}
+
+	addIngredientsToShoppingList(ingredients: Ingredient[]){
+		this.shoppingListService.addIngredientsFromSelectedRecipe(ingredients)
 	}
 }

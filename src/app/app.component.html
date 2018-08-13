@@ -2,8 +2,9 @@
 <app-header (nav)="onNav($event)"></app-header>
 <div class="container">
 	<div class="col-md-12">
-		<app-recipies *ngIf="feature === 'recipes'"></app-recipies>
-		<app-shopping-list *ngIf="feature === 'shopping'"></app-shopping-list>
+		<router-outlet></router-outlet>
+		<!-- <app-recipies *ngIf="feature === 'recipes'"></app-recipies>
+		<app-shopping-list *ngIf="feature === 'shopping'"></app-shopping-list> -->
 	</div>
 </div>
   
