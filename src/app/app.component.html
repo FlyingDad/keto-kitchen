@@ -1,11 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<app-header (nav)="onNav($event)"></app-header>
+<app-header></app-header>
 <div class="container">
-	<div class="col-md-12">
-		<router-outlet></router-outlet>
-		<!-- <app-recipies *ngIf="feature === 'recipes'"></app-recipies>
+	<div class="row">
+		<div class="col-md-12">
+			<router-outlet></router-outlet>
+			<!-- <app-recipies *ngIf="feature === 'recipes'"></app-recipies>
 		<app-shopping-list *ngIf="feature === 'shopping'"></app-shopping-list> -->
+		</div>
 	</div>
 </div>
-  
-
