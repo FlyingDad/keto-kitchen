@@ -52,6 +52,11 @@ export class RecipeService {
 		];
 
 	constructor(private shoppingListService: ShoppingListService) {}
+
+	updateRecipesFromServer(recipes: Recipe[]) {
+		this.recipes = recipes
+		this.recipiesChanged.next(recipes.slice())
+	}
 	
 	getRecipes() {
 		// return copy of array so we are not returning reference to recipes, keeps recipes private
