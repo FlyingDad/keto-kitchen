@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FirebaseService } from '../shared/firebase.service';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
 	selector: 'app-header',
@@ -8,7 +9,7 @@ import { FirebaseService } from '../shared/firebase.service';
 })
 export class HeaderComponent{
 
-	constructor(private firebaseService: FirebaseService){}
+	constructor(private firebaseService: FirebaseService, private authService: AuthService){}
 
 	saveRecipes() {
 		this.firebaseService.saveRecipes().subscribe(
@@ -26,6 +27,10 @@ export class HeaderComponent{
 		// 		this.recipeService.updateRecipesFromServer(recipes)
 		// 	}
 		// )
+	}
+
+	onLogout() {
+		this.authService.logout()
 	}
 
 }

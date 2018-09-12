@@ -3,6 +3,7 @@ import { Http, Response } from '@angular/http';
 import { map } from 'rxjs/operators'
 import { RecipeService } from '../recipes/recipe.service';
 import { Recipe } from '../recipes/recipe.model';
+import { AuthService } from '../auth/auth.service';
 
 
 @Injectable({
@@ -10,14 +11,15 @@ import { Recipe } from '../recipes/recipe.model';
 })
 export class FirebaseService {
 
-	constructor(private firebaseServer: Http, private recipeService: RecipeService) { }
+	constructor(private firebaseServer: Http, private recipeService: RecipeService, private authService: AuthService) { }
 	
 	saveRecipes() {
 		return this.firebaseServer.put('https://keto-kitchen.firebaseio.com/recipes.json', this.recipeService.getRecipes())
 	}
 
 	getRecipes() {
-		return this.firebaseServer.get('https://keto-kitchen.firebaseio.com/recipes.json')
+		const token = this.authService.getToken()
+		return this.firebaseServer.get('https://keto-kitchen.firebaseio.com/recipes.json?auth=' + token)
 		.pipe(map(
 			(response: Response) => {
 				const recipes: Recipe[] = response.json()

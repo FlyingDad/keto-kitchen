@@ -19,6 +19,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {RecipeService} from './recipes/recipe.service'
 import { FirebaseService } from './shared/firebase.service';
 import { HttpModule } from '@angular/http';
+import { SignupComponent } from './auth/signup/signup.component';
+import { SigninComponent } from './auth/signin/signin.component';
+import { AuthService } from './auth/auth.service';
+import { AuthGuardService } from './auth/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,9 @@ import { HttpModule } from '@angular/http';
 		ShoppingEditComponent,
 		DropdownDirective,
 		RecipeStartComponent,
-		RecipeEditComponent
+		RecipeEditComponent,
+		SignupComponent,
+		SigninComponent
   ],
   imports: [
 		BrowserModule,
@@ -41,7 +47,7 @@ import { HttpModule } from '@angular/http';
 		FormsModule,
 		HttpModule
   ],
-  providers: [ShoppingListService, RecipeService, FirebaseService],
+  providers: [ShoppingListService, RecipeService, FirebaseService, AuthService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
