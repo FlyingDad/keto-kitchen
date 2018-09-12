@@ -9,7 +9,7 @@ import { AuthService } from '../auth/auth.service';
 })
 export class HeaderComponent{
 
-	constructor(private firebaseService: FirebaseService, private authService: AuthService){}
+	constructor(private firebaseService: FirebaseService, public authService: AuthService){}
 
 	saveRecipes() {
 		this.firebaseService.saveRecipes().subscribe(
