@@ -1,0 +1,12 @@
+.welcome-wrapper {
+	border: 1px solid green;
+	border-radius: 4px;
+	padding: 10px;
+	text-align: center;
+	box-shadow: 3px 3px 3px gray;
+}
+
+
+.welcome {
+	color: green;
+}
