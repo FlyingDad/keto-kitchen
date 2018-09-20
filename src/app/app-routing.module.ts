@@ -1,7 +1,8 @@
 import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from '@angular/router'
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router'
 import { ShoppingListComponent } from "./shopping-list/shopping-list.component";
-import { HomeComponent } from "./home/home.component";
+import { HomeComponent } from "./core/home/home.component";
+import { AuthGuardService } from "./auth/auth-guard.service";
 
 const appRoutes: Routes = [
 	{ path: '', component: HomeComponent},
@@ -10,8 +11,9 @@ const appRoutes: Routes = [
 ]
 
 @NgModule({
-	imports: [RouterModule.forRoot(appRoutes)],
-	exports: [RouterModule]
+	imports: [RouterModule.forRoot(appRoutes, {preloadingStrategy:  PreloadAllModules})],
+	exports: [RouterModule],
+	providers: [AuthGuardService]
 })
 
 export class AppRoutingModule {
