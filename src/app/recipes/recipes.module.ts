@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatButtonModule, MatCheckboxModule, MatCardModule, MatIconModule } from '@angular/material';
 import { RecipesRoutingModule } from './recipes-routing.module';
 import { RecipiesComponent } from './recipies.component';
 import { RecipeStartComponent } from './recipe-start/recipe-start.component';
@@ -20,12 +21,20 @@ import { SharedModule } from '../shared/shared.module';
 		RecipeItemComponent
 	],
 	imports: [
+		MatButtonModule,
+		MatCheckboxModule,
+		MatCardModule,
+		MatIconModule,
 		CommonModule,
 		ReactiveFormsModule,
 		RecipesRoutingModule,
 		SharedModule
 	],
-	exports: [],
+	exports: [
+		MatButtonModule,
+		MatIconModule,
+		MatCheckboxModule,
+		MatCardModule],
 	providers: [],
 })
 

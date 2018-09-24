@@ -1,0 +1,22 @@
+nav {
+	margin-bottom: 20px;
+}
+
+.title {
+	font-size: 1.4em;
+	margin: 15px 30px 15px 0px;
+}
+
+
+.example-icon {
+  padding: 0 14px;
+}
+
+.item-spacer {
+	font-size: .8em;
+	/* margin-right: 10px; */
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}

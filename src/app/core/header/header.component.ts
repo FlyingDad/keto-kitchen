@@ -5,7 +5,7 @@ import { AuthService } from '../../auth/auth.service';
 @Component({
 	selector: 'app-header',
 	templateUrl: './header.component.html',
-	styleUrls: []
+	styleUrls: ['./header.component.css']
 })
 export class HeaderComponent{
 
@@ -14,7 +14,7 @@ export class HeaderComponent{
 	saveRecipes() {
 		this.firebaseService.saveRecipes().subscribe(
 			(data) => {
-				console.log('Save Recipes: ' + data.statusText)
+				console.log('Save Recipes: ' + data)
 			}
 		)
 	}
