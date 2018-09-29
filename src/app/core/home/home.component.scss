@@ -8,11 +8,16 @@
 
 
 .welcome {
+	max-width: 400px;
+	margin: 0 auto;
+}
+
+.welcome-header {
 	color: green;
 }
 
 .example-card {
-  max-width: 400px;
+  max-width: 300px;
 }
 
 .example-header-image {
