@@ -1,5 +1,4 @@
 import { NgModule } from "@angular/core";
-import { MatButtonModule, MatCheckboxModule, MatCardModule, MatIconModule, MatToolbarModule } from '@angular/material';
 import { HeaderComponent } from "./header/header.component";
 import { HomeComponent } from "./home/home.component";
 import { SharedModule } from "../shared/shared.module";
@@ -8,6 +7,7 @@ import { RecipeService} from '../recipes/recipe.service'
 import { FirebaseService } from '../shared/firebase.service';
 import { AuthService } from '../auth/auth.service';
 import { ShoppingListService } from '../shopping-list/shopping-list.service';
+import { MaterialModule } from "../material/material.module";
 
 @NgModule ({
 	declarations: [
@@ -15,21 +15,13 @@ import { ShoppingListService } from '../shopping-list/shopping-list.service';
 		HomeComponent
 	],
 	imports: [
-		MatButtonModule,
-		MatCheckboxModule,
-		MatCardModule,
-		MatIconModule,
-		MatToolbarModule,
-		MatButtonModule,
 		SharedModule,
-		AppRoutingModule
+		AppRoutingModule,
+		MaterialModule
 	],
 	exports: [
 		AppRoutingModule,
-		HeaderComponent,
-		MatIconModule,
-		MatCheckboxModule,
-		MatCardModule
+		HeaderComponent
 	],
 	providers:[ShoppingListService, RecipeService, FirebaseService, AuthService]
   
