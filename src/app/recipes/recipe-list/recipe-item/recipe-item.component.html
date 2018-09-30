@@ -1,23 +1,37 @@
-<a 
+<!-- <a 
 	style="cursor: pointer"
 	class="list-group-item clearfix"
 	[routerLink]="[index]"
 	routerLinkActive="active"
-	>
-	<mat-card class="example-card">
+	> -->
+	<mat-card class="recipe-card">
 		<mat-card-header>
 			<div mat-card-avatar class="example-header-image"></div>
-			<mat-card-title>{{ recipe.name }}</mat-card-title>
-			<mat-card-subtitle>Dog Breed</mat-card-subtitle>
+			<mat-card-title>
+				<a 
+					class="recipe-card-title"
+					style="cursor: pointer"
+					class="list-group-item clearfix"
+					[routerLink]="[index]"
+					routerLinkActive="active"
+					>{{ recipe.name }}
+				</a>
+			</mat-card-title>
 		</mat-card-header>
+		<!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+
 		<img mat-card-image [src]="recipe.imagePath" alt="{{ recipe.name }}" style="max-height: 250px;">
 		<mat-card-content>
 			<p>{{ recipe.description }}
 			</p>
 		</mat-card-content>
 		<mat-card-actions>
-			<button mat-button>LIKE</button>
-			<button mat-button>SHARE</button>
+				<button mat-icon-button color="primary">
+						<mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+				</button>
+				<button mat-icon-button color="primary">
+						<mat-icon aria-label="Example icon-button with a heart icon">share</mat-icon>
+				</button>
 		</mat-card-actions>
 	</mat-card>
 
@@ -32,4 +46,4 @@
 	<span class="pull-right">
 		<img [src]="recipe.imagePath" alt="{{ recipe.name }}" class="img-responsive" style="max-height: 50px;">
 	</span> -->
-</a>
+<!-- </a> -->

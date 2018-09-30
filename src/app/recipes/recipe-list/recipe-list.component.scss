@@ -1,0 +1,21 @@
+
+.recipes-header {
+	display: inline;
+	// flex-direction: row;
+	// flex-wrap: nowrap;
+	// height: 140px;
+	// justify-content: flex-start;
+	p {
+		display: inline;
+		color: green;
+		margin-left: 20px;
+	}
+}
+
+
+
+.recipe-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: left;
+}
