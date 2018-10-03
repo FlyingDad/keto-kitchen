@@ -1,4 +1,4 @@
-<a 
+<!-- <a 
 	style="cursor: pointer"
 	class="list-group-item clearfix"
 	[routerLink]="[index]"
@@ -15,4 +15,16 @@
 	<span class="pull-right">
 		<img [src]="recipe.imagePath" alt="{{ recipe.name }}" class="img-responsive" style="max-height: 50px;">
 	</span>
-</a>
+</a> -->
+<div class="card mr-2 mb-2" style="width: 18rem;">
+  <img class="card-img-top" [src]="recipe.imagePath" alt="{{ recipe.name }}">
+  <div class="card-body">
+    <h5 class="card-title">{{ recipe.name }}</h5>
+    <p class="card-text">{{ recipe.description }}</p>
+    <a
+		style="cursor: pointer"
+		[routerLink]="[index]"
+		routerLinkActive="active"
+		class="btn btn-primary">Recipe</a>
+  </div>
+</div>
