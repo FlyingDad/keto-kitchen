@@ -7,11 +7,13 @@ import { RecipeService} from '../recipes/recipe.service'
 import { FirebaseService } from '../shared/firebase.service';
 import { AuthService } from '../auth/auth.service';
 import { ShoppingListService } from '../shopping-list/shopping-list.service';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule ({
 	declarations: [
 		HeaderComponent,
-		HomeComponent
+		HomeComponent,
+		FooterComponent
 	],
 	imports: [
 		SharedModule,
@@ -19,7 +21,8 @@ import { ShoppingListService } from '../shopping-list/shopping-list.service';
 	],
 	exports: [
 		AppRoutingModule,
-		HeaderComponent
+		HeaderComponent,
+		FooterComponent
 	],
 	providers:[ShoppingListService, RecipeService, FirebaseService, AuthService]
   
