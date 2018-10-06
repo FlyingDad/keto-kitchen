@@ -1,0 +1,24 @@
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+	border: 1px solid red;
+}
+
+.edit-container {
+	border: 1px solid red;
+}
+
+.edit-row {
+	border: 1px solid rgb(55, 255, 0);
+}
+
+.edit-col {
+	border: 2px solid rgb(0, 30, 255);
+}
+
+.edit-form {
+	border: px solid rgb(170, 0, 255);
+}
+
+.name-row {
+	border: 1px solid rgb(170, 0, 255);
+}
